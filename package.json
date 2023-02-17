@@ -1,0 +1,40 @@
+{
+  "name": "101337015_comp3133_assignment2",
+  "version": "1.0.0",
+  "description": "Assignment 2. Full Stack Development II",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starryskyyy/101337015_COMP3133_Assignment1.git"
+  },
+  "keywords": [
+    "mongoose",
+    "Apollo",
+    "graphql",
+    "mongodb",
+    "express",
+    "API"
+  ],
+  "author": "Elizaveta Vygovskaia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starryskyyy/101337015_COMP3133_Assignment1/issues"
+  },
+  "homepage": "https://github.com/starryskyyy/101337015_COMP3133_Assignment1#readme",
+  "dependencies": {
+    "apollo-server-express": "^3.11.1",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "graphql": "^16.6.0",
+    "mongoose": "^6.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
