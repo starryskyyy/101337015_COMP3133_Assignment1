@@ -15,9 +15,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 //mongoDB Atlas Connection String
-const mongodb_atlas_url = process.env.DATABASE_URL;
+const db_url = process.env.DATABASE_URL;
 
-mongoose.connect(mongodb_atlas_url, {
+mongoose.connect(db_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(success => {
@@ -37,11 +37,16 @@ const app = express();
 app.use(bodyParser.json());
 app.use('*', cors());
 
-//Add Express app as middleware to Apollo Server
-server.applyMiddleware({app})
+async function startServer() {
+  await server.start();
 
-//console.log(server)
+  //Add Express app as middleware to Apollo Server
+  server.applyMiddleware({ app });
 
-//Start listen 
-app.listen({ port: process.env.PORT }, () =>
-  console.log(`🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`));
+  //Start listen 
+  app.listen({ port: process.env.PORT }, () =>
+    console.log(`🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`)
+  );
+}
+
+startServer()
