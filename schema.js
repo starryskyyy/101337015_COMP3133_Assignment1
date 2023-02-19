@@ -14,13 +14,14 @@ exports.typeDefs = gql `
         username: String!
         email: String!
         password: String!
+        message: String
+        error: String
     }
 
     type Query {
-        getUser(username: String!, password: String!): User
+        login(username: String!, password: String!): String
         getEmployees: [Employee]
         getEmployeeByID(id: ID!): Employee
-        getEmployeeByGender(gender: String!): [Employee]
     }
 
     type Mutation {
@@ -39,10 +40,9 @@ exports.typeDefs = gql `
         
         deleteEmployee(id: String!): Employee
 
-        signup(username: String!
-            email: String!
+        signup(username: String!, 
+            email: String!, 
             password: String!): User
-
-        
+                
     }
 `
