@@ -5,7 +5,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please enter username'],
     trim: true,
-    lowercase: true,
     unique: [true, 'User name already exists']
   },
   email: {
@@ -36,5 +35,5 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("Employee", UserSchema);
+const User = mongoose.model("User", UserSchema);
 module.exports = User;
