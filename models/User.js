@@ -12,7 +12,6 @@ const UserSchema = new mongoose.Schema({
     required: true,
     unique: [true, "Duplicate Email Not allowed"],
     trim: true,
-    uppercase: true,
     maxlength: 50,
     //Custom validation
     validate: function(value) {
