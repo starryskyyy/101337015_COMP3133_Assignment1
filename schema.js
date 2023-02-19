@@ -8,9 +8,10 @@ exports.typeDefs = gql `
         email: String!
         gender: String!
         salary: Float!
+        message: String
+        error: String
     }
     type User {
-        id: ID!
         username: String!
         email: String!
         password: String!
